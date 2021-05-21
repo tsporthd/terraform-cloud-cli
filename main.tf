@@ -20,6 +20,21 @@ provider "aws" {
 }
 
 
+
+######################################
+# REMOTE BACKEND
+######################################
+terraform {
+  backend "remote" {
+    organization = "llp-terraform"
+
+    workspaces {
+      name = "terraform-cloud-cli"
+    }
+  }
+}
+
+
 #######################################
 # Data
 ########################################
